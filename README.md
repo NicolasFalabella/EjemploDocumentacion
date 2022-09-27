@@ -68,7 +68,7 @@ if(tecla == 0)
 ~~~
 
 ## :robot: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/eUmyjlDAxmT-copy-of-empresa-frigorifica/editel?sharecode=JDnTsw91GYLOgMEQ7zVBetjlJ0U1qmANtBFeJwBnwRg)
+- [proyecto](https://www.tinkercad.com/things/eUmyjlDAxmT)
 ## :tv: Link al video del proceso
 - [video](https://www.youtube.com/watch?v=VyGjE8kx-O0)
 
