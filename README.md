@@ -1,55 +1,80 @@
-# Ejemplo Documentación Dojos
-![Tinkercad](./img/ArduinoTinkercad.jpg)
+#  Dojos: EQUIPO ROJO 26/9/22
 
 
 ## Integrantes 
-- Esteban
-- Marcelo
-- Quiroz
-- Dario Cuda
+- bruno castagnola
+- luca bovone
+- nicolas falabella
+- melina ochoa
+- leonardo figueroa
+- lucas dieguez
 
-## Proyecto: Contador binario.
-![Tinkercad](./img/ContadorBinario.png)
-
+## Proyecto: Camara frigorifica con leds.
 
 ## Descripción
-En este parrafo deberan describir que funcion cumple su proyecto. Que solucion esta ofreciendo.
+Descripcion: Simula el funcionamiento de un medidor de la temperatura de una cámara frigorífica, convirtiendo los valores del sensor de temperatura a los rangos válidos propios de un frigorífico, e indicando en un display LED de 7 segmentos si la temperatura está en Frio, Calor o Normal, y prendiendo un led Azul, Verde o Rojo según estos parametros.
 
 ## Función principal
 Esta funcion se encarga de encender y apagar los leds.
 
-B0, B1, B2, B3 son #define que utilizamos para agregar los leds, asociandolo a pines de la placa arduino.
+es una funcion que permite mediante el sensor de temperatura ver los diferentes leds prendidos, cuando la temperatura esta alta sale rojo y en el display se ve una C, cuando la temperatura es baja sale azul y en el display se ve una F y cuando no es ni frio ni calor se prende la verde y en el display se ve un - .
 
 (Breve explicación de la función)
 
 ~~~ c (lenguaje en el que esta escrito)
-void EncenderBinario(int estado3, int estado2,int estado1,int estado0)
+void loop()
 {
-  digitalWrite(B3,estado3);
-  digitalWrite(B2,estado2);
-  digitalWrite(B1,estado1);
-  digitalWrite(B0,estado0);
+  
+tecla = digitalRead(A1);
+  
+if(tecla == 0)
+{
+  
+ temperatura = analogRead(A0);
+ temp2 = map(temperatura, 20, 358, -40, 125);
+ 
+  
+  
+  if(temp2 > 30)
+  {
+    digitalWrite(AZUL, LOW);
+    digitalWrite(VERDE, LOW);
+    printDigit('c');
+    digitalWrite(ROJO, HIGH);
+  } 
+     
+  else if(temp2 < 10)
+  {
+    digitalWrite(ROJO, LOW);
+    digitalWrite(VERDE, LOW);
+    printDigit('f');
+    digitalWrite(AZUL, HIGH);
+  }
+     
+  else
+  {
+    digitalWrite(ROJO, LOW);
+    digitalWrite(AZUL, LOW);
+    printDigit('d');
+    digitalWrite(VERDE, HIGH);
+  }  
+}else{
+  digitalWrite(ROJO, LOW);
+  digitalWrite(AZUL, LOW);
+  digitalWrite(VERDE, LOW);
+  digitalWrite(G, LOW);
+}
 }
 ~~~
 
 ## :robot: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/aOYiibnDjWu)
+- [proyecto](https://www.tinkercad.com/things/eUmyjlDAxmT-copy-of-empresa-frigorifica/editel?sharecode=JDnTsw91GYLOgMEQ7zVBetjlJ0U1qmANtBFeJwBnwRg)
 ## :tv: Link al video del proceso
 - [video](https://www.youtube.com/watch?v=VyGjE8kx-O0)
 
 ---
-### Fuentes
-- [Consejos para documentar](https://www.sohamkamani.com/how-to-write-good-documentation/#architecture-documentation).
 
-- [Lenguaje Markdown](https://markdown.es/sintaxis-markdown/#linkauto).
 
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-- [Tutorial](https://www.youtube.com/watch?v=oxaH9CFpeEE).
-
-- [Emojis](https://gist.github.com/rxaviers/7360908).
-
----
 
 
 
